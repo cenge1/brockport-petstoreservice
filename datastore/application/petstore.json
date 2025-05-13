@@ -1,17 +1,5 @@
 [
   {
-    "cost": 100.00,
-    "petId": 2,
-    "legs": 4,
-    "animalType": "DOMESTIC",
-    "petType": "CAT",
-    "skinType": "UNKNOWN",
-    "gender": "FEMALE",
-    "breed": "SPHYNX",
-    "hasLegs": true,
-    "isMammal": false
-  },
-  {
     "cost": 750.00,
     "petId": 3,
     "legs": 4,
@@ -61,13 +49,25 @@
   },
   {
     "cost": 225.00,
-    "petId": 1,
+    "petId": 5,
     "legs": 4,
     "animalType": "DOMESTIC",
-    "petType": "CAT",
+    "petType": "DOG",
     "skinType": "FUR",
     "gender": "FEMALE",
-    "breed": "SPHYNX",
+    "breed": "GERMAN_SHEPHERD",
+    "hasLegs": true,
+    "isMammal": false
+  },
+  {
+    "cost": 225.00,
+    "petId": 6,
+    "legs": 4,
+    "animalType": "DOMESTIC",
+    "petType": "DOG",
+    "skinType": "FUR",
+    "gender": "FEMALE",
+    "breed": "GERMAN_SHEPHERD",
     "hasLegs": true,
     "isMammal": false
   }

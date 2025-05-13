@@ -1,6 +1,7 @@
 package com.petstoreservices.service;
 
 
+import com.petstore.AnimalType;
 import com.petstore.PetEntity;
 
 import com.petstore.animals.attributes.PetType;
@@ -155,4 +156,30 @@ public class PetInventoryService {
 
         return updatedPetItem;
     }
+
+    /**
+     * Search petsForSale list for matches to PetType
+     * @param animalType - the type of animal
+     * @return - all the pets by animal type found
+     * @throws PetNotFoundSaleException - Animal type not found in inventory
+     * @throws PetDataStoreException - Issue with file format, reading the file, or file is not present
+     */
+    public List<PetEntity> getPetsByAnimalType(AnimalType animalType) throws PetNotFoundSaleException,  PetDataStoreException {
+        List<PetEntity> sortedPets = this.petRepo.getPetInventory().stream()
+                .filter(p -> p.getAnimalType().equals(animalType))
+                .sorted(Comparator.comparingInt(p->p.getPetId()))
+                .collect(Collectors.toList());
+        if(sortedPets.isEmpty())
+        {
+            throw new PetNotFoundSaleException("0 results found for search criteria animalType[" + animalType
+                    +"] Please try again!!");
+        }
+        return sortedPets;
+    }
+
+
+
+
+
+
 }
